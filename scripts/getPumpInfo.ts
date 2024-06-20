@@ -2,8 +2,6 @@ import { Keypair, Connection } from "@solana/web3.js";
 import { PumpFunSDK, CreateTokenMetadata } from "../src";
 import { AnchorProvider, Wallet } from "@coral-xyz/anchor";
 
-// https://solscan.io/tx/4NyKZBhaaQnVbAmuCdcWynVcRoGs2g46xhfCDh7AYYyJfrtpqJLqmXwUGgi4pkosiebcthjVYugQJW4KBk97LqhT
-
 const keypair = Keypair.fromSecretKey(
   Uint8Array.from(require("/Users/kien6034/.config/solana/id.json"))
 );
@@ -19,7 +17,7 @@ const pumpFunSDK = new PumpFunSDK(provider);
   );
 
   const bondingCurveInfo = await pumpFunSDK.program.account.bondingCurve.fetch(
-    "BpcpAQV1mVcfZxdGmRfEHheS6aU8MBcCweeRFakwths9"
+    "HZGtiKYbuGcYTvBXAtTYMd7BWnAGrLYGrnxg9mtauHVD"
   );
 
   console.log("=========== Global Info ===============\n");
