@@ -42,9 +42,9 @@ import {
   sendTx,
 } from "./util";
 import { PumpFun, IDL } from "./IDL";
-;
 const PROGRAM_ID = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P";
-const MPL_TOKEN_METADATA_PROGRAM_ID = "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s";
+const MPL_TOKEN_METADATA_PROGRAM_ID =
+  "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s";
 
 export const GLOBAL_ACCOUNT_SEED = "global";
 export const MINT_AUTHORITY_SEED = "mint-authority";
@@ -129,7 +129,10 @@ export class PumpFunSDK {
     commitment: Commitment = DEFAULT_COMMITMENT,
     finality: Finality = DEFAULT_FINALITY
   ): Promise<TransactionResult> {
-    let bondingCurveAccount = await this.getBondingCurveAccount(mint, commitment);
+    let bondingCurveAccount = await this.getBondingCurveAccount(
+      mint,
+      commitment
+    );
     if (!bondingCurveAccount) {
       return {
         success: false,
@@ -293,7 +296,6 @@ export class PumpFunSDK {
         )
       );
     }
-
 
     transaction.add(
       await this.program.methods

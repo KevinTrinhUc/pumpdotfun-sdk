@@ -65,6 +65,7 @@ export class BondingCurveAccount {
     let n =
       (amount * this.virtualSolReserves) / (this.virtualTokenReserves + amount);
 
+    console.log("n: ", n);
     // Calculate the fee amount in the same units
     let a = (n * feeBasisPoints) / 10000n;
 
